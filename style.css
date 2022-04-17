@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap');
+
+:root {
+    --grey-light: rgb(220, 220, 220);
+    --grey-strong: rgb(190, 190, 190);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:conic-gradient(from -.5turn at bottom right, deeppink, cyan, rebeccapurple) no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 370px;
+    margin: 130px auto 0;
+}
+
+.select-btn,
+.options li {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.select-btn {
+    background: conic-gradient(at 0% 0%, snow, white);
+    height: 65px;
+    font-size: 22px;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-radius: 7px;
+    text-transform: capitalize;
+}
+
+.select-btn i {
+    font-size: 31px;
+    transition: transform 0.3s linear;
+}
+
+.wrapper.active .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.content {
+    display: none;
+    background: conic-gradient(at 0% 0%, snow, white);
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.wrapper.active .content {
+    display: block;
+}
+
+.content .search {
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    left: 15px;
+    line-height: 53px;
+    color: var(--grey-strong);
+    font-size: 20px;
+}
+
+.search input {
+    color: var(--grey-strong);
+    height: 53px;
+    width: 100%;
+    font-size: 17px;
+    padding: 0 15px 0 43px;
+    outline: none;
+    border: 1px solid var(--grey-light);
+    border-radius: 5px;
+}
+
+.content .options {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 7px;
+}
+
+.options::-webkit-scrollbar {
+    width: 7px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: var(--grey-light);
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: var(--grey-strong);
+    border-radius: 25px;
+}
+
+.options li {
+    height: 50px;
+    border-radius: 5px;
+    padding: 0 13px;
+    font-size: 21px;
+}
+
+.options li:hover,
+li.selected {
+    background: var(--grey-light);
+}
